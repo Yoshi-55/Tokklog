@@ -42,8 +42,6 @@
       <%= form_with url: sake_logs_path, method: :get, local: true, class: "flex flex-wrap items-center gap-2" do |f| %>
         <%= f.hidden_field :q, value: params[:q] %>
         
-        <span class="text-yellow-300 text-xs font-medium">📊 味覚で並び替え:</span>
-        
         <!-- 味覚選択 -->
         <%= f.select :taste_sort, 
             options_for_select([
@@ -93,23 +91,25 @@
 
     <div id="sake_logs" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 auto-rows-fr">
       <% @sake_logs.each do |sake_log| %>
-        <div class="group backdrop-blur-lg bg-white/10 border border-white/20 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:bg-white/15 overflow-hidden flex flex-col h-full">
-          <div class="p-6 flex-1 flex flex-col">
+        <div class="group backdrop-blur-lg bg-white/10 border border-white/20 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:bg-white/15 overflow-hidden flex flex-col h-full text-sm p-3 sm:p-6">
+          <div class="p-3 sm:p-6 flex-1 flex flex-col">
             <div class="flex-1">
               <%= render sake_log %>
             </div>
           </div>
-          <div class="p-4 border-t border-white/10 flex gap-3 mt-auto">
-            <%= link_to sake_log, class: "flex-1 text-center py-3 px-4 backdrop-blur-sm bg-white/10 border border-white/20 text-gray-200 rounded-xl font-medium text-sm hover:bg-white/20 hover:text-white transition-all duration-200" do %>
-              <span class="inline-flex items-center">
-                詳細
-              </span>
-            <% end %>
-            <%= link_to new_post_path(sake_log_id: sake_log.id), class: "flex-1 text-center py-3 px-4 bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-xl font-medium text-sm hover:from-yellow-400 hover:to-orange-400 hover:scale-105 transition-all duration-200" do %>
-              <span class="inline-flex items-center">
-                シェア
-              </span>
-            <% end %>
+          <div class="p-2 sm:p-4 border-t border-white/10 flex gap-2 sm:gap-3 mt-auto">
+            <div class="flex w-full gap-3">
+              <%= link_to sake_log, class: "flex-1 text-center py-3 px-2 sm:px-4 backdrop-blur-sm bg-white/10 border border-white/20 text-gray-200 rounded-xl font-medium text-sm hover:bg-white/20 hover:text-white transition-all duration-200 min-w-0" do %>
+                <span class="inline-flex items-center w-full justify-center">
+                  詳細
+                </span>
+              <% end %>
+              <%= link_to new_post_path(sake_log_id: sake_log.id), class: "flex-1 text-center py-3 px-2 sm:px-4 bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-xl font-medium text-sm hover:from-yellow-400 hover:to-orange-400 transition-all duration-200 min-w-0" do %>
+                <span class="inline-flex items-center w-full justify-center">
+                  シェア
+                </span>
+              <% end %>
+            </div>
           </div>
         </div>
       <% end %>
