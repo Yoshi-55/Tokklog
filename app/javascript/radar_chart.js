@@ -24,14 +24,14 @@ function initializeRadarCharts() {
         datasets: [{
           label: '味覚評価',
           data: data,
-          backgroundColor: 'rgba(167, 243, 208, 0.4)', // 緑系の透明色
-          borderColor: 'rgba(34, 197, 94, 0.9)', // 鮮やかな緑
+          backgroundColor: 'rgba(0, 229, 255, 0.18)', // シアンの透明色
+          borderColor: '#00E5FF', // シアン
           borderWidth: 3,
-          pointBackgroundColor: 'rgba(34, 197, 94, 1)', // 濃い緑
-          pointBorderColor: '#ffffff',
+          pointBackgroundColor: '#80D8FF', // 明るいシアン
+          pointBorderColor: '#80D8FF',
           pointBorderWidth: 2,
-          pointRadius: 3, // 小さく変更（6 → 3）
-          pointHoverRadius: 5, // ホバー時も小さく（8 → 5）
+          pointRadius: 2, // 通常時2
+          pointHoverRadius: 2, // ホバー時も2
           tension: 0.1
         }]
       },

@@ -13,10 +13,10 @@
   <!-- Header Section -->
   <div class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-3xl p-6 mb-8 shadow-2xl">
     <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-      <h1 class="text-3xl sm:text-4xl font-bold text-transparent bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text">
+      <h1 class="text-3xl sm:text-4xl font-bold text-[#FFD580]">
         記録一覧
       </h1>
-      <%= link_to new_sake_log_path, class: "group px-6 py-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-2xl font-medium shadow-lg hover:from-yellow-400 hover:to-orange-400 hover:scale-105 hover:shadow-yellow-500/25 transition-all duration-300" do %>
+      <%= link_to new_sake_log_path, class: "group px-6 py-3 bg-[#FFD580] text-slate-900 rounded-2xl font-medium shadow-lg transition-all duration-300 hover:bg-[#ffe6b3] hover:text-slate-900" do %>
         <span class="inline-flex items-center">
           新規作成
           <svg class="w-5 h-5 ml-2 group-hover:rotate-90 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -32,7 +32,7 @@
       <%= form_with url: sake_logs_path, method: :get, local: true, class: "flex items-center gap-2 max-w-md" do |f| %>
         <%= f.text_field :q, value: params[:q], placeholder: "キーワード検索", 
             class: "flex-1 rounded-2xl border border-white/20 bg-white/10 backdrop-blur-sm text-white px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 placeholder-gray-300" %>
-        <%= f.submit "検索", class: "rounded-2xl px-6 py-3 bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-400 hover:to-orange-400 text-white font-medium text-sm transition-all duration-200 hover:scale-105" %>
+        <%= f.submit "検索", class: "rounded-2xl px-6 py-3 bg-[#FFD580] text-slate-900 font-medium text-sm transition-all duration-200 hover:bg-[#ffe6b3] hover:text-slate-900" %>
         <% if params[:q].present? %>
           <%= link_to 'クリア', sake_logs_path, class: 'rounded-2xl px-4 py-3 backdrop-blur-sm bg-white/10 border border-white/20 hover:bg-white/20 text-gray-200 hover:text-white text-sm font-medium transition-all duration-200' %>
         <% end %>
@@ -64,7 +64,7 @@
             { class: "rounded-lg border border-white/20 bg-white/10 backdrop-blur-sm text-white px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-yellow-400" } %>
         
         <!-- 適用ボタン -->
-        <%= f.submit "適用", class: "rounded-lg px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-400 hover:to-orange-400 text-white font-medium text-xs transition-all duration-200" %>
+        <%= f.submit "適用", class: "rounded-lg px-3 py-1 bg-[#FFD580] text-slate-900 font-medium text-xs transition-all duration-200 hover:bg-[#ffe6b3] hover:text-slate-900" %>
         
         <!-- リセットボタン -->
         <% if params[:taste_sort].present? || params[:taste_direction].present? %>
@@ -79,7 +79,6 @@
     <% if params[:taste_sort].present? && params[:taste_direction].present? %>
       <div class="backdrop-blur-sm bg-yellow-500/15 border border-yellow-400/25 rounded-xl p-2 mb-4">
         <div class="flex items-center space-x-1">
-          <span class="text-yellow-400 text-sm">📊</span>
           <p class="text-yellow-200 font-medium text-xs">
             <% taste_names = { 'sweetness' => '甘味', 'sourness' => '酸味', 'bitterness' => '苦味', 'umami' => '旨味', 'spiciness' => '辛味' } %>
             <% direction_names = { 'desc' => '降順', 'asc' => '昇順' } %>
@@ -104,7 +103,9 @@
                   詳細
                 </span>
               <% end %>
-              <%= link_to new_post_path(sake_log_id: sake_log.id), class: "flex-1 text-center py-3 px-2 sm:px-4 bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-xl font-medium text-sm hover:from-yellow-400 hover:to-orange-400 hover:scale-105 transition-all duration-200 min-w-0" do %>
+
+              <%= link_to new_post_path(sake_log_id: sake_log.id), class: "flex-1 text-center py-3 px-2 sm:px-4 bg-[#FFD580] text-slate-900 rounded-xl font-medium text-sm transition-all duration-200 hover:bg-[#ffe6b3] hover:text-slate-900 min-w-0" do %>
+
                 <span class="inline-flex items-center w-full justify-center">
                   シェア
                 </span>
