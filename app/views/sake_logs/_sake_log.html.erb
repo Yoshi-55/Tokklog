@@ -2,10 +2,9 @@
   <%# 銘柄 %>
   <div class="space-y-2">
     <div class="flex items-center space-x-2">
-      <span class="text-yellow-400 text-lg">🍶</span>
-      <strong class="text-yellow-200 font-semibold text-sm tracking-wide">銘柄</strong>
+      
     </div>
-    <div class="text-white font-bold text-lg leading-tight">
+    <div class="text-[#FFD580] font-bold text-lg leading-tight">
       <%= sake_log.name %>
     </div>
   </div>
@@ -13,8 +12,7 @@
   <%# レーダーチャート %>
   <div class="space-y-3">
     <div class="flex items-center space-x-2">
-      <span class="text-green-400 text-lg">📊</span>
-      <strong class="text-green-200 font-semibold text-sm tracking-wide">味覚評価</strong>
+      
     </div>
     <div class="relative h-48 w-full bg-gradient-to-br from-slate-800/40 to-slate-700/30 rounded-xl border border-slate-600/30 p-4 shadow-inner">
       <canvas id="radar-<%= sake_log.id %>" 
@@ -27,8 +25,8 @@
   <%# メモ %>
   <div class="space-y-2">
     <div class="flex items-center space-x-2">
-      <span class="text-emerald-400 text-lg">📝</span>
-      <strong class="text-emerald-200 font-semibold text-sm tracking-wide">メモ</strong>
+      
+
     </div>
     <div class="text-gray-300 text-sm leading-relaxed line-clamp-3">
       <%= sake_log.memo %>

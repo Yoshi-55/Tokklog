@@ -13,7 +13,7 @@
   <!-- ヘッダー -->
   <div class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-3xl p-6 mb-8 shadow-2xl">
     <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-      <h1 class="text-3xl sm:text-4xl font-bold text-transparent bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text">
+      <h1 class="text-3xl sm:text-4xl font-bold text-[#F4B6C2]">
         掲示板にシェア
       </h1>
       <%= link_to posts_path, class: "group px-4 py-2 backdrop-blur-sm bg-white/10 border border-white/20 text-gray-200 rounded-xl font-medium text-sm hover:bg-white/20 hover:text-white transition-all duration-200" do %>
@@ -56,19 +56,11 @@
         <!-- taste情報がある場合はチャートを表示 -->
         <% if @post.sake_log.present? && @post.has_radar_data? %>
         <div class="space-y-4">
-          <div class="flex items-center space-x-2 mb-4">
-            <span class="text-blue-400 text-lg">ℹ️</span>
-            <strong class="text-blue-300 font-medium text-lg">日本酒記録からの自動入力</strong>
-          </div>
-          <div class="text-gray-300 text-sm mb-4">
-            <strong>味覚情報:</strong> <%= @post.taste_description %>
-          </div>
           
           <!-- レーダーチャート -->
           <div class="backdrop-blur-sm bg-white/5 rounded-2xl p-6 border border-white/10 mb-6">
             <div class="flex items-center space-x-2 mb-4">
-              <span class="text-green-400 text-lg">📊</span>
-              <h3 class="text-green-300 font-bold text-lg">味覚評価</h3>
+              <h3 class="text-cyan-300 font-bold text-lg">味覚評価</h3>
             </div>
             <div class="relative h-64 bg-white/5 rounded-xl border border-white/10 p-4">
               <canvas id="new-post-radar-chart" 
@@ -80,19 +72,12 @@
         </div>
         <% elsif @post.sake_log.present? %>
         <div class="space-y-4">
-          <div class="flex items-center space-x-2 mb-4">
-            <span class="text-blue-400 text-lg">ℹ️</span>
-            <strong class="text-blue-300 font-medium text-lg">日本酒記録からの自動入力</strong>
-          </div>
-          <div class="text-gray-300 text-sm mb-6">
-            <strong>味覚情報:</strong> <%= @post.taste_description %>
-          </div>
         </div>
         <% end %>
 
         <!-- メモ -->
         <div class="space-y-3">
-          <%= form.label :memo, "メモ", class: "flex items-center space-x-2 font-medium text-lg text-emerald-300" %>
+          <%= form.label :memo, "メモ", class: "flex items-center space-x-2 font-medium text-lg text-[#FFD580]" %>
           <%= form.text_area :memo, value: @post.memo, rows: 4, 
               class: "w-full rounded-2xl border border-white/20 bg-white/10 backdrop-blur-sm text-white px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 placeholder-gray-300 resize-none", 
               placeholder: "例：冷やして飲むと美味しい。フルーティーな香りが特徴的。" %>
@@ -102,7 +87,7 @@
 
         <!-- アクションボタン -->
         <div class="flex flex-col sm:flex-row gap-4 pt-4">
-          <%= form.submit "投稿する", class: "flex-1 py-4 px-6 bg-gradient-to-r from-emerald-500 to-teal-500 text-white rounded-2xl font-medium text-center hover:from-emerald-400 hover:to-teal-400 hover:scale-105 shadow-lg hover:shadow-emerald-500/25 transition-all duration-300" %>
+          <%= form.submit "投稿する", class: "flex-1 py-4 px-6 bg-[#F4B6C2] text-slate-900 rounded-2xl font-medium text-center hover:bg-[#f9d3dd] hover:text-slate-900 shadow-lg transition-all duration-300" %>
           <%= link_to '戻る', posts_path, class: 'flex-1 py-4 px-6 backdrop-blur-sm bg-white/10 border border-white/20 text-gray-200 rounded-2xl font-medium text-center hover:bg-white/20 hover:text-white transition-all duration-200' %>
         </div>
       </div>

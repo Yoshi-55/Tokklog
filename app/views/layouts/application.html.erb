@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "TokkLog." %></title>
+    <title><%= content_for(:title) || "TokkLog" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -22,7 +22,7 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
 
-  <body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen flex flex-col">
+  <body class="min-h-screen flex flex-col" style="background-color: #0D1B2A;">
   <%= render "layouts/header" %>
 
   <main class="pt-24 sm:pt-24 flex-1 relative">

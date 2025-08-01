@@ -1,15 +1,15 @@
 <header class="backdrop-blur-md bg-white/10 border-b border-white/20 shadow-2xl py-3 px-4 fixed top-0 left-0 w-full z-50">
   <div class="container mx-auto flex items-center min-h-[56px] sm:min-h-[60px]">
     <h1 class="text-lg sm:text-xl lg:text-4xl font-bold flex-shrink-0 mr-1 sm:mr-2 lg:mr-3">
-      <%= link_to sake_logs_path, class: "text-transparent bg-gradient-to-r from-yellow-400 via-orange-400 to-pink-400 bg-clip-text hover:from-yellow-300 hover:via-orange-300 hover:to-pink-300 transition-all duration-300" do %>
-        🌙 TOKK LOG.
+      <%= link_to sake_logs_path, class: "text-transparent bg-gradient-to-r from-[#FFD580] via-[#F4B6C2] to-[#FFD580] bg-clip-text hover:from-[#ffe6b3] hover:via-[#f9d3dd] hover:to-[#ffe6b3] transition-all duration-300" do %>
+        🌙 Tokk log
       <% end %>
     </h1>
 
     <!-- ナビゲーションボタン -->
     <div class="flex-shrink-0 ml-auto mr-2 flex gap-1 sm:gap-3">
-      <%= link_to "記録一覧", sake_logs_path, class: "px-2 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-yellow-500/80 to-orange-500/80 backdrop-blur-sm border border-white/20 text-white rounded-2xl shadow-lg font-medium text-xs sm:text-base tracking-wide hover:from-yellow-400/90 hover:to-orange-400/90 hover:scale-105 hover:shadow-yellow-500/25 transition-all duration-300" %>
-      <%= link_to "掲示板", posts_path, class: "px-2 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-pink-500/80 to-rose-500/80 backdrop-blur-sm border border-white/20 text-white rounded-2xl shadow-lg font-medium text-xs sm:text-base tracking-wide hover:from-pink-400/90 hover:to-rose-400/90 hover:scale-105 hover:shadow-pink-500/25 transition-all duration-300" %>
+      <%= link_to "記録一覧", sake_logs_path, class: "px-2 py-2 sm:px-6 sm:py-3 bg-[#FFD580] text-slate-900 border border-white/20 rounded-2xl shadow-lg font-medium text-xs sm:text-base tracking-wide transition-all duration-300 hover:bg-[#ffe6b3] hover:text-slate-900" %>
+      <%= link_to "掲示板", posts_path, class: "px-2 py-2 sm:px-6 sm:py-3 bg-[#F4B6C2] text-slate-900 border border-white/20 rounded-2xl shadow-lg font-medium text-xs sm:text-base tracking-wide transition-all duration-300 hover:bg-[#f9d3dd] hover:text-slate-900" %>
     </div>
 
     <!-- ハンバーガーメニュー -->
@@ -25,23 +25,23 @@
       <div class="flex flex-col items-center space-y-3 p-6 w-full">
         <!-- ユーザー挨拶 -->
         <% if user_signed_in? %>
-          <div class="w-full text-center py-3 px-4 bg-gradient-to-r from-yellow-400/20 to-orange-400/20 border border-yellow-400/30 rounded-xl mb-2">
-            <div class="text-yellow-300 font-medium text-sm">
+          <div class="w-full text-center py-3 px-4 bg-gradient-to-r from-[#FFD580]/20 to-[#F4B6C2]/20 border border-[#FFD580]/30 rounded-xl mb-2">
+            <div class="text-[#F4B6C2] font-medium text-sm">
               ようこそ、<%= current_user.name %>さん
             </div>
           </div>
           <div class="w-full h-px bg-gray-600/50 mb-2"></div>
         <% end %>
         
-        <%= link_to "TOPに戻る", root_path, class: "w-full text-center py-3 px-4 text-yellow-300 hover:text-yellow-200 hover:bg-gray-700/70 rounded-xl font-medium transition-all duration-200" %>
-        <%= link_to "選び方ガイド", guide_path, class: "w-full text-center py-3 px-4 text-blue-300 hover:text-blue-200 hover:bg-gray-700/70 rounded-xl font-medium transition-all duration-200" %>
-        <%= link_to "使い方", howto_path, class: "w-full text-center py-3 px-4 text-green-300 hover:text-green-200 hover:bg-gray-700/70 rounded-xl font-medium transition-all duration-200" %>
+        <%= link_to "TOPに戻る", root_path, class: "w-full text-center py-3 px-4 text-[#FFD580] hover:text-[#F4B6C2] hover:bg-gray-700/70 rounded-xl font-medium transition-all duration-200" %>
+        <%= link_to "選び方ガイド", guide_path, class: "w-full text-center py-3 px-4 text-[#F4B6C2] hover:text-[#FFD580] hover:bg-gray-700/70 rounded-xl font-medium transition-all duration-200" %>
+        <%= link_to "使い方", howto_path, class: "w-full text-center py-3 px-4 text-cyan-300 hover:text-[#FFD580] hover:bg-gray-700/70 rounded-xl font-medium transition-all duration-200" %>
         <div class="w-full h-px bg-gray-600/50 my-2"></div>
         <% if user_signed_in? %>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { turbo_method: :delete, confirm: "ログアウトしますか？" }, class: "w-full text-center py-3 px-4 text-red-300 hover:text-red-200 hover:bg-red-600/30 rounded-xl font-medium transition-all duration-200" %>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { turbo_method: :delete, confirm: "ログアウトしますか？" }, class: "w-full text-center py-3 px-4 text-red-300 hover:text-[#F4B6C2] hover:bg-red-600/30 rounded-xl font-medium transition-all duration-200" %>
         <% else %>
-          <%= link_to "ログイン", new_user_session_path, class: "w-full text-center py-3 px-4 text-cyan-300 hover:text-cyan-200 hover:bg-gray-700/70 rounded-xl font-medium transition-all duration-200" %>
-          <%= link_to "新規登録", new_user_registration_path, class: "w-full text-center py-3 px-4 text-pink-300 hover:text-pink-200 hover:bg-gray-700/70 rounded-xl font-medium transition-all duration-200" %>
+          <%= link_to "ログイン", new_user_session_path, class: "w-full text-center py-3 px-4 text-cyan-300 hover:text-[#FFD580] hover:bg-gray-700/70 rounded-xl font-medium transition-all duration-200" %>
+          <%= link_to "新規登録", new_user_registration_path, class: "w-full text-center py-3 px-4 text-[#F4B6C2] hover:text-[#FFD580] hover:bg-gray-700/70 rounded-xl font-medium transition-all duration-200" %>
         <% end %>
       </div>
     </nav>
