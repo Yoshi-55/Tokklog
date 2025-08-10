@@ -3,7 +3,7 @@ import Rails from "@rails/ujs"
 Rails.start()
 
 import "@hotwired/turbo-rails"
-import "./controllers"
+import "./controllers/index"
 
 import "./brand_autocomplete";
 import "./hamburger_menu";
