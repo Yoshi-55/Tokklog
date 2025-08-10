@@ -1,4 +1,4 @@
-import Chart from 'chart.js';
+import Chart from 'chart.js/auto';
 
 document.addEventListener('DOMContentLoaded', initializeRadarCharts);
 document.addEventListener('turbo:load', initializeRadarCharts);
